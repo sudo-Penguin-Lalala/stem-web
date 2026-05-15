@@ -84,7 +84,7 @@
           e.target.classList.remove('visible');
         }
       });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.15 });
     document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
     const fadeObs = new IntersectionObserver((entries) => {
@@ -94,13 +94,10 @@
         if (ratio < 0.3) {
           const progress = ratio / 0.3;
           e.target.style.opacity = progress;
-          e.target.style.transform = `translateY(${(1 - progress) * 20}px) scale(${0.95 + progress * 0.05})`;
-        } else {
-          e.target.style.opacity = '';
-          e.target.style.transform = '';
+          e.target.style.transform = `translateY(${(1 - progress) * 15}px) scale(${0.92 + progress * 0.08})`;
         }
       });
-    }, { threshold: Array.from({ length: 20 }, (_, i) => i / 20) });
+    }, { threshold: [0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3] });
     document.querySelectorAll('.reveal').forEach(el => fadeObs.observe(el));
   </script>
 </body>
