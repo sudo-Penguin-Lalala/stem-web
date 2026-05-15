@@ -65,7 +65,7 @@
       span.textContent = icons[i % icons.length];
       span.style.left = (Math.random() * 60 - 10) + '%';
       span.style.bottom = (Math.random() * 30 - 10) + '%';
-      span.style.animationDelay = (Math.random() * 10) + 's';
+      span.style.animationDelay = (-Math.random() * 30) + 's';
       span.style.animationDuration = (15 + Math.random() * 15) + 's';
       span.style.fontSize = (1.2 + Math.random() * 1) + 'rem';
       container.appendChild(span);
