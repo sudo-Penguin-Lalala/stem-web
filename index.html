@@ -78,12 +78,30 @@
       entries.forEach(e => {
         if (e.isIntersecting) {
           e.target.classList.add('visible');
+          e.target.style.opacity = '';
+          e.target.style.transform = '';
         } else {
           e.target.classList.remove('visible');
         }
       });
     }, { threshold: 0.1 });
     document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+    const fadeObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        const ratio = e.intersectionRatio;
+        if (ratio < 0.3) {
+          const progress = ratio / 0.3;
+          e.target.style.opacity = progress;
+          e.target.style.transform = `translateY(${(1 - progress) * 20}px) scale(${0.95 + progress * 0.05})`;
+        } else {
+          e.target.style.opacity = '';
+          e.target.style.transform = '';
+        }
+      });
+    }, { threshold: Array.from({ length: 20 }, (_, i) => i / 20) });
+    document.querySelectorAll('.reveal').forEach(el => fadeObs.observe(el));
   </script>
 </body>
 </html>
