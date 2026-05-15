@@ -60,7 +60,9 @@
   <script>
     const icons = ['☀️','🌱','💨','🔋','♻️','🌍','💡','🚲','🌿','⚡','🏡','🌻','🍃','💧','🌞'];
     const container = document.querySelector('.floating-icons');
-    for (let i = 0; i < 150; i++) {
+    const isMobile = window.innerWidth <= 600;
+    const count = isMobile ? 50 : 150;
+    for (let i = 0; i < count; i++) {
       const span = document.createElement('span');
       span.textContent = icons[i % icons.length];
       span.style.left = (Math.random() * 110 - 5) + '%';
