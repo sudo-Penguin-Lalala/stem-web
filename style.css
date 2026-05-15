@@ -16,8 +16,10 @@ body {
   align-items: center;
   justify-content: flex-start;
   padding: 0.75rem 1.5rem;
-  background: #0d2b0d;
-  border-bottom: 1px solid #1b5e20;
+  background: rgba(13, 43, 13, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(27, 94, 32, 0.5);
   position: sticky;
   top: 0;
   z-index: 10;
@@ -90,16 +92,14 @@ h1 {
   font-size: 1.1rem;
   font-weight: 500;
   opacity: 0.9;
-  margin-bottom: 2rem;
 }
 
-/* Hero sequential fade-in */
+/* Hero sequential animation */
 .hero-content .school,
 .hero-content h1,
 .hero-content .subtitle,
 .hero-content .slogan,
-.hero-content .teacher,
-.hero-content .hero-buttons {
+.hero-content .teacher {
   opacity: 0;
   transform: translateY(20px);
   animation: fadeUp 0.6s ease forwards;
@@ -109,97 +109,82 @@ h1 {
 .hero-content .subtitle { animation-delay: 1.0s; }
 .hero-content .slogan { animation-delay: 1.4s; }
 .hero-content .teacher { animation-delay: 1.8s; }
-.hero-content .hero-buttons { animation-delay: 2.2s; }
 
 @keyframes fadeUp {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Buttons */
-.hero-buttons {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.btn {
-  padding: 0.8rem 1.5rem;
-  font-size: 1rem;
-  font-weight: 600;
-  font-family: inherit;
-  border: 2px solid #a5d6a7;
-  background: transparent;
-  color: #e8f5e9;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  transition: background 0.3s, transform 0.2s;
-}
-.btn:hover {
-  background: rgba(165, 214, 167, 0.15);
-  transform: translateY(-2px);
-}
-.btn:active {
-  transform: translateY(0);
-}
-
-/* Content sections */
-.content-section {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 2rem 1.5rem;
-  animation: cardIn 0.5s ease;
-}
-
-.content-section.hidden {
-  display: none;
-}
-
-@keyframes cardIn {
-  from {
-    opacity: 0;
-    transform: translateY(40px) scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-.section-card {
-  background: #112211;
-  border: 1px solid #1b5e20;
-  border-radius: 1rem;
-  padding: 2rem;
-}
-
-.section-card h2 {
-  font-size: 1.4rem;
-  margin-bottom: 1.5rem;
-  color: #a5d6a7;
-}
-
-.section-card video {
-  width: 100%;
-  border-radius: 0.5rem;
-  background: #000;
-}
-
-.gallery-grid {
+/* Bento Grid */
+.bento {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
+  padding: 2rem 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-.gallery-grid img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 0.5rem;
-  transition: transform 0.3s ease;
+.bento-card {
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.gallery-grid img:hover {
-  transform: scale(1.03);
+
+.bento-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.bento-card.large {
+  grid-column: 1 / -1;
+}
+
+.bento-card img,
+.bento-card video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.bento-card img {
+  height: 200px;
+}
+
+.bento-card.large video {
+  height: auto;
+  max-height: 400px;
+}
+
+.card-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.75rem 1rem;
+  background: rgba(10, 26, 10, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 footer {
@@ -215,16 +200,11 @@ footer {
     padding: 2rem 1rem;
   }
 
-  .gallery-grid {
+  .bento {
     grid-template-columns: 1fr;
   }
 
-  .gallery-grid img {
-    height: 200px;
-  }
-
-  .hero-buttons {
-    flex-direction: column;
-    align-items: center;
+  .bento-card img {
+    height: 180px;
   }
 }

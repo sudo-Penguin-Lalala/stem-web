@@ -21,52 +21,43 @@
       <p class="subtitle">✨ Sử dụng năng lượng tái tạo ✨</p>
       <p class="slogan">Slogan: Năng lượng sạch — Cuộc sống xanh</p>
       <p class="teacher">Giáo viên hướng dẫn: Vũ Thị Hường</p>
-      <div class="hero-buttons">
-        <button class="btn" data-target="video-section">🎬 Video giới thiệu</button>
-        <button class="btn" data-target="gallery-section">🖼️ Hình ảnh sản phẩm</button>
-      </div>
     </div>
   </header>
 
-  <section id="video-section" class="content-section hidden">
-    <div class="section-card">
-      <h2>Video giới thiệu sản phẩm</h2>
+  <main class="bento">
+    <div class="bento-card large reveal">
       <video controls preload="metadata">
         <source src="assets/video.mp4" type="video/mp4">
       </video>
+      <p class="card-label">Video giới thiệu</p>
     </div>
-  </section>
-
-  <section id="gallery-section" class="content-section hidden">
-    <div class="section-card">
-      <h2>Hình ảnh sản phẩm</h2>
-      <div class="gallery-grid">
-        <img src="assets/house.jpg" alt="Mô hình nhà năng lượng xanh">
-        <img src="assets/turbine.jpg" alt="Tuabin gió">
-        <img src="assets/garden.jpg" alt="Vườn xanh">
-        <img src="assets/bike.jpg" alt="Xe đạp - phương tiện xanh">
-      </div>
+    <div class="bento-card reveal">
+      <img src="assets/house.jpg" alt="Mô hình nhà năng lượng xanh">
+      <p class="card-label">Nhà năng lượng xanh</p>
     </div>
-  </section>
+    <div class="bento-card reveal">
+      <img src="assets/turbine.jpg" alt="Tuabin gió">
+      <p class="card-label">Tuabin gió</p>
+    </div>
+    <div class="bento-card reveal">
+      <img src="assets/garden.jpg" alt="Vườn xanh">
+      <p class="card-label">Vườn xanh</p>
+    </div>
+    <div class="bento-card reveal">
+      <img src="assets/bike.jpg" alt="Xe đạp - phương tiện xanh">
+      <p class="card-label">Phương tiện xanh</p>
+    </div>
+  </main>
 
   <footer>
     <p>made with ❤️ by palera1nx</p>
   </footer>
 
   <script>
-    document.querySelectorAll('.btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const target = document.getElementById(btn.dataset.target);
-        const isVisible = !target.classList.contains('hidden');
-        document.querySelectorAll('.content-section').forEach(s => s.classList.add('hidden'));
-        if (!isVisible) {
-          target.classList.remove('hidden');
-          requestAnimationFrame(() => {
-            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          });
-        }
-      });
-    });
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
   </script>
 </body>
 </html>
