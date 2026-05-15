@@ -93,17 +93,9 @@ body {
 @keyframes rise {
   0% {
     transform: translate(0, 0) rotate(0deg);
-    opacity: 0;
-  }
-  10% {
-    opacity: 0.25;
-  }
-  90% {
-    opacity: 0.25;
   }
   100% {
     transform: translate(80vw, -110vh) rotate(360deg);
-    opacity: 0;
   }
 }
 
