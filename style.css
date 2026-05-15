@@ -80,27 +80,30 @@ body {
   inset: 0;
   overflow: hidden;
   z-index: 1;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 50px);
-  grid-template-rows: repeat(auto-fill, 50px);
-  justify-content: center;
-  align-content: center;
-  gap: 8px;
-  padding: 1rem;
 }
 
 .floating-icons span {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.6rem;
-  opacity: 0.2;
-  animation: iconPulse 6s ease-in-out infinite;
+  position: absolute;
+  bottom: -10%;
+  opacity: 0.25;
+  animation: rise linear infinite;
 }
 
-@keyframes iconPulse {
-  0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.2; }
-  50% { transform: scale(1.1) rotate(3deg); opacity: 0.3; }
+@keyframes rise {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.25;
+  }
+  90% {
+    opacity: 0.25;
+  }
+  100% {
+    transform: translateY(-110vh) rotate(360deg);
+    opacity: 0;
+  }
 }
 
 .school {
