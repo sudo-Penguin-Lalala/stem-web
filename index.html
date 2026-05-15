@@ -15,6 +15,7 @@
   </nav>
 
   <header class="hero">
+    <div class="floating-icons" aria-hidden="true"></div>
     <div class="hero-content">
       <p class="school">THPT Nguyễn Trãi — Lớp 10A9</p>
       <h1>Mô hình lối sống xanh</h1>
@@ -57,6 +58,19 @@
   </footer>
 
   <script>
+    const icons = ['☀️','🌱','💨','🔋','♻️','🌍','💡','🚲','🌿','⚡','🏡','🌻','🍃','💧','🌞'];
+    const container = document.querySelector('.floating-icons');
+    for (let i = 0; i < 30; i++) {
+      const span = document.createElement('span');
+      span.textContent = icons[Math.floor(Math.random() * icons.length)];
+      span.style.left = Math.random() * 100 + '%';
+      span.style.top = Math.random() * 100 + '%';
+      span.style.animationDelay = Math.random() * 8 + 's';
+      span.style.animationDuration = (8 + Math.random() * 12) + 's';
+      span.style.fontSize = (1 + Math.random() * 1.5) + 'rem';
+      container.appendChild(span);
+    }
+
     const obs = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
     }, { threshold: 0.1 });
