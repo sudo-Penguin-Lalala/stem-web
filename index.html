@@ -60,14 +60,10 @@
   <script>
     const icons = ['☀️','🌱','💨','🔋','♻️','🌍','💡','🚲','🌿','⚡','🏡','🌻','🍃','💧','🌞'];
     const container = document.querySelector('.floating-icons');
-    for (let i = 0; i < 30; i++) {
+    for (let i = 0; i < 80; i++) {
       const span = document.createElement('span');
-      span.textContent = icons[Math.floor(Math.random() * icons.length)];
-      span.style.left = Math.random() * 100 + '%';
-      span.style.top = Math.random() * 100 + '%';
-      span.style.animationDelay = Math.random() * 8 + 's';
-      span.style.animationDuration = (8 + Math.random() * 12) + 's';
-      span.style.fontSize = (1 + Math.random() * 1.5) + 'rem';
+      span.textContent = icons[i % icons.length];
+      span.style.animationDelay = (Math.random() * 6) + 's';
       container.appendChild(span);
     }
 
