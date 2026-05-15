@@ -61,9 +61,9 @@ h1 {
 
 .subtitle {
   font-size: 1.3rem;
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 1.5rem;
-  background: linear-gradient(90deg, #a5d6a7, #69f0ae, #a5d6a7);
+  background: linear-gradient(90deg, #ffd54f, #ffab40, #ffd54f);
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
