@@ -26,26 +26,33 @@
 
   <main>
     <section class="media-section">
-      <div class="video-block">
+      <div class="video-block reveal">
         <video controls preload="metadata">
           <source src="assets/video.mp4" type="video/mp4">
         </video>
       </div>
 
-      <div class="gallery-row">
+      <div class="gallery-row reveal">
         <img src="assets/house.jpg" alt="Mô hình nhà năng lượng xanh">
         <img src="assets/turbine.jpg" alt="Tuabin gió">
       </div>
 
-      <div class="gallery-row">
+      <div class="gallery-row reveal">
         <img src="assets/garden.jpg" alt="Vườn xanh">
         <img src="assets/bike.jpg" alt="Xe đạp - phương tiện xanh">
       </div>
     </section>
   </main>
 
-  <footer>
+  <footer class="reveal">
     <p>made with ❤️ by palera1nx</p>
   </footer>
+
+  <script>
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  </script>
 </body>
 </html>
