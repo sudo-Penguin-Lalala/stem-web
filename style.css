@@ -85,13 +85,14 @@ body {
 .floating-icons span {
   position: absolute;
   bottom: -10%;
+  left: -10%;
   opacity: 0.25;
   animation: rise linear infinite;
 }
 
 @keyframes rise {
   0% {
-    transform: translateY(0) rotate(0deg);
+    transform: translate(0, 0) rotate(0deg);
     opacity: 0;
   }
   10% {
@@ -101,7 +102,7 @@ body {
     opacity: 0.25;
   }
   100% {
-    transform: translateY(-110vh) rotate(360deg);
+    transform: translate(80vw, -110vh) rotate(360deg);
     opacity: 0;
   }
 }
