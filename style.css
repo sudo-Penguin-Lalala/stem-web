@@ -357,7 +357,12 @@ a {
 }
 
 .hero-teacher {
-  display: inline-block;
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  column-gap: var(--space-2);
+  row-gap: var(--space-1);
   font-size: var(--text-base);
   font-weight: 500;
   color: var(--color-text-body);
@@ -370,7 +375,6 @@ a {
   margin-top: var(--space-2);
   box-shadow: 0 4px 14px var(--color-shadow-card);
   line-height: 1.4;
-  white-space: nowrap;
   text-align: center;
 }
 
@@ -697,6 +701,10 @@ footer {
   font-family: var(--font-mono);
 }
 
+.text-nowrap {
+  white-space: nowrap;
+}
+
 @media (max-width: 480px) {
   .topbar {
     gap: var(--space-2);
@@ -708,7 +716,8 @@ footer {
   }
 
   .brand-text {
-    font-size: var(--text-sm);
+    font-size: clamp(0.8125rem, 3.6vw, 0.9375rem);
+    white-space: nowrap;
   }
 
   .brand-school {
@@ -730,7 +739,6 @@ footer {
     font-size: var(--text-sm);
     padding: var(--space-2) var(--space-4);
     border-radius: var(--radius-md);
-    white-space: normal;
     max-width: 96%;
   }
 }
