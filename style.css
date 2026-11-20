@@ -61,7 +61,6 @@
   --color-card-glass-hover: rgba(20, 60, 45, 0.94);
   --color-label-bar: #092017;
   --color-pill-glass: rgba(52, 211, 153, 0.16);
-  --color-logo-bg: #f8fbf9;
 
   /* Ambient Atmospheric Orbs */
   --color-ambient-emerald: rgba(52, 211, 153, 0.22);
@@ -197,14 +196,10 @@ a {
 }
 
 .logo {
-  width: 40px;
-  height: 40px;
-  border-radius: var(--radius-pill);
+  width: 44px;
+  height: 44px;
   object-fit: contain;
-  background-color: var(--color-logo-bg);
-  padding: 2px;
-  border: 1px solid var(--color-border-base);
-  box-shadow: 0 2px 6px var(--color-shadow-card);
+  filter: drop-shadow(0 2px 6px var(--color-shadow-card));
   transition: transform 0.2s var(--ease-apple);
 }
 
@@ -672,8 +667,8 @@ footer {
   }
 
   .logo {
-    width: 34px;
-    height: 34px;
+    width: 38px;
+    height: 38px;
   }
 
   .brand-text {
