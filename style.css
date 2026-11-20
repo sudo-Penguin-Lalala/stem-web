@@ -61,6 +61,7 @@
   --color-card-glass-hover: rgba(24, 72, 55, 0.92);
   --color-label-bar: #0f3326;
   --color-pill-glass: rgba(52, 211, 153, 0.16);
+  --color-logo-bg: #f8fbf9;
 
   /* Ambient Atmospheric Orbs */
   --color-ambient-emerald: rgba(52, 211, 153, 0.24);
@@ -190,8 +191,10 @@ a {
 .logo {
   width: 40px;
   height: 40px;
-  border-radius: var(--radius-sm);
-  object-fit: cover;
+  border-radius: var(--radius-pill);
+  object-fit: contain;
+  background-color: var(--color-logo-bg);
+  padding: 2px;
   border: 1px solid var(--color-border-base);
   box-shadow: 0 2px 6px var(--color-shadow-card);
   transition: transform 0.2s var(--ease-apple);
@@ -643,6 +646,17 @@ footer {
   -webkit-backdrop-filter: blur(12px);
   color: var(--color-text-dim);
   font-size: var(--text-sm);
+}
+
+.footer-title {
+  font-weight: 600;
+  color: var(--color-text-main);
+  margin-bottom: var(--space-1);
+}
+
+.footer-sub {
+  font-size: var(--text-xs);
+  color: var(--color-text-dim);
 }
 
 @media (max-width: 480px) {
