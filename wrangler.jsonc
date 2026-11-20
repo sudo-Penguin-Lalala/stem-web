@@ -1,0 +1,11 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "stem-web",
+  "compatibility_date": "2026-11-18",
+  "observability": {
+    "enabled": false
+  },
+  "assets": {
+    "directory": "."
+  }
+}
