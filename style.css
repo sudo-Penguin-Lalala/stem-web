@@ -357,10 +357,29 @@ a {
 }
 
 .hero-teacher {
-  font-size: var(--text-sm);
-  color: var(--color-text-muted);
-  margin-top: var(--space-1);
-  text-shadow: 0 1px 6px var(--color-shadow-card);
+  display: inline-block;
+  font-size: var(--text-base);
+  font-weight: 500;
+  color: var(--color-text-body);
+  padding: var(--space-2) var(--space-5);
+  background-color: var(--color-pill-glass);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--color-border-base);
+  border-radius: var(--radius-pill);
+  margin-top: var(--space-3);
+  box-shadow: 0 4px 14px var(--color-shadow-card);
+  line-height: 1.5;
+}
+
+.teacher-name {
+  color: var(--color-text-main);
+  font-weight: 700;
+}
+
+.teacher-dept {
+  color: var(--color-primary-light);
+  font-weight: 600;
 }
 
 .hero-team {
@@ -703,6 +722,12 @@ footer {
   .hero-content {
     gap: var(--space-2);
     padding: var(--space-4) var(--space-3);
+  }
+
+  .hero-teacher {
+    font-size: var(--text-sm);
+    padding: var(--space-1) var(--space-3);
+    border-radius: var(--radius-md);
   }
 }
 
