@@ -519,44 +519,108 @@ a {
   margin-top: var(--space-2);
 }
 
-/* Team Roster Section */
+/* Team Roster Panels (2 Tổ Side-by-Side) */
 .team-section {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 var(--space-4) var(--space-12) var(--space-4);
 }
 
-.team-grid {
+.roster-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: var(--space-3);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4);
 }
 
-.member-card {
+@media (max-width: 820px) {
+  .roster-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.roster-panel {
+  background-color: var(--color-card-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--color-border-base);
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 20px var(--color-shadow-card), inset 0 1px 0 var(--color-specular);
+  overflow: hidden;
+}
+
+.roster-header {
+  padding: var(--space-3) var(--space-4);
   background-color: var(--color-label-bar);
   color: var(--color-text-main);
-  border: 1px solid var(--color-border-subtle);
-  border-radius: var(--radius-sm);
-  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--color-border-subtle);
   display: flex;
-  flex-direction: column;
-  gap: 2px;
-  transition: transform 0.2s var(--ease-apple), border-color 0.2s var(--ease-apple);
+  align-items: center;
+  justify-content: space-between;
 }
 
-.member-card:hover {
-  transform: translateY(-2px);
-  border-color: var(--color-border-hover);
-}
-
-.member-name {
-  font-size: var(--text-sm);
+.roster-title {
+  font-family: var(--font-display);
+  font-size: var(--text-base);
   font-weight: 700;
+  color: var(--color-primary-light);
+}
+
+.roster-badge {
+  font-size: var(--text-xs);
+  color: var(--color-text-dim);
+  background-color: var(--color-pill-glass);
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border-subtle);
+}
+
+.roster-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  text-align: left;
+}
+
+.roster-table th {
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--color-text-dim);
+  border-bottom: 1px solid var(--color-border-subtle);
+  background-color: var(--color-label-bar);
+}
+
+.roster-table td {
+  padding: var(--space-2) var(--space-3);
+  border-bottom: 1px solid var(--color-border-subtle);
+  color: var(--color-text-body);
+}
+
+.roster-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.roster-table tbody tr {
+  transition: background-color 0.15s var(--ease-apple);
+}
+
+.roster-table tbody tr:hover {
+  background-color: var(--color-card-glass-hover);
+}
+
+.col-stt {
+  width: 44px;
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  color: var(--color-text-dim);
+}
+
+.col-name {
+  font-weight: 600;
   color: var(--color-text-main);
 }
 
-.member-role {
-  font-size: var(--text-xs);
+.col-role {
   color: var(--color-primary-light);
 }
 
