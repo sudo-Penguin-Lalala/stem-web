@@ -130,10 +130,33 @@ body {
 }
 
 html {
+  color-scheme: dark;
   -webkit-tap-highlight-color: transparent;
   -webkit-text-size-adjust: 100%;
+  touch-action: manipulation;
   scroll-behavior: smooth;
   font-size: 16px;
+}
+
+/* Accessibility Skip Link (Web Interface Guidelines) */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: var(--space-4);
+  z-index: 100;
+  padding: var(--space-2) var(--space-4);
+  background-color: var(--color-bg-elevated);
+  color: var(--color-primary-light);
+  border: 1px solid var(--color-border-accent);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: var(--text-sm);
+  transition: top 0.2s var(--ease-apple);
+}
+
+.skip-link:focus {
+  top: calc(var(--space-4) + env(safe-area-inset-top, 0px));
 }
 
 body {
@@ -172,6 +195,13 @@ a {
 :focus-visible {
   outline: 2px solid var(--color-primary-light);
   outline-offset: 3px;
+}
+
+:disabled,
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 /* Apple-style Frosted Glass Topbar with Dynamic Island / Notch Inset */
@@ -396,14 +426,31 @@ a {
   text-shadow: 0 1px 6px var(--color-shadow-card);
 }
 
-/* Scroll indicator with hover pause for accessibility */
-.scroll-indicator {
+/* Scroll indicator button with hover pause for accessibility */
+button.scroll-indicator {
+  background: none;
+  border: none;
+  font-family: inherit;
   margin-top: var(--space-6);
   font-size: var(--text-lg);
   color: var(--color-primary-light);
   animation: floatBounce 2.5s ease-in-out infinite;
   display: inline-block;
   cursor: pointer;
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-pill);
+}
+
+button.scroll-indicator:focus-visible {
+  outline: 2px solid var(--color-primary-light);
+  outline-offset: 3px;
+}
+
+:disabled,
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 .scroll-indicator:hover,
@@ -417,6 +464,12 @@ a {
 }
 
 /* Bento Bottom Spacing */
+.bento-section,
+.stats-section,
+.team-section {
+  scroll-margin-top: calc(88px + var(--space-4));
+}
+
 .bento-section {
   max-width: var(--max-width);
   margin: 0 auto;
@@ -741,6 +794,12 @@ footer {
     border-radius: var(--radius-md);
     max-width: 96%;
   }
+
+  .bento-section,
+  .stats-section,
+  .team-section {
+    scroll-margin-top: calc(76px + var(--space-4) + env(safe-area-inset-top, 0px));
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -750,5 +809,9 @@ footer {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+
+  .floating-icons {
+    display: none !important;
   }
 }

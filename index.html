@@ -8,13 +8,16 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <title>[ tên dự án ] - THPT Nguyễn Trãi - Bình Dương (11A9 English STEM)</title>
   <meta name="description" content="[ mô tả ngắn ]">
+  <link rel="preload" href="assets/fonts/space-grotesk-vietnamese.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Chuyển đến nội dung chính</a>
+
   <nav class="topbar">
     <div class="brand-group">
-      <img src="assets/logo.png" alt="THPT Nguyễn Trãi - Bình Dương" class="logo">
+      <img src="assets/logo.png" alt="THPT Nguyễn Trãi - Bình Dương" class="logo" width="64" height="64" fetchpriority="high">
       <div class="brand-info">
         <span class="brand-text">THPT Nguyễn Trãi <span class="text-nowrap">- Bình Dương</span></span>
         <span class="brand-school">Lớp 11A9 (Tổ 3 + 4)</span>
@@ -34,15 +37,15 @@
         <span class="text-nowrap teacher-dept">(Tổ Ngoại ngữ)</span>
       </p>
       <p class="hero-team"><span class="text-nowrap">Nhóm thực hiện:</span> <span class="text-nowrap">Tổ 3 + 4</span></p>
-      <div class="scroll-indicator" aria-hidden="true" onclick="document.querySelector('.bento-section').scrollIntoView({behavior: 'smooth'})">&#8595;</div>
+      <button type="button" class="scroll-indicator" aria-label="Cuộn xuống mô hình kỹ thuật" onclick="document.querySelector('#main-content').scrollIntoView({behavior: 'smooth'})">&#8595;</button>
     </div>
   </header>
 
-  <main class="bento-section">
+  <main id="main-content" class="bento-section">
     <h2 class="section-title">Mô hình và các phân hệ kỹ thuật</h2>
     <div class="bento">
       <div class="bento-card large">
-        <video controls preload="metadata" poster="assets/thumb.png">
+        <video controls preload="metadata" poster="assets/thumb.png" playsinline>
           <source src="assets/video.mp4" type="video/mp4">
         </video>
         <div class="card-label">
@@ -52,7 +55,7 @@
       </div>
 
       <div class="bento-card">
-        <img src="assets/house.jpg" alt="[ ảnh 1 ]" loading="lazy">
+        <img src="assets/house.jpg" alt="[ ảnh 1 ]" width="800" height="600" loading="lazy">
         <div class="card-label">
           <span>[ bộ phận 1 ]</span>
           <span class="card-tag">[ công nghệ 1 ]</span>
@@ -60,7 +63,7 @@
       </div>
 
       <div class="bento-card">
-        <img src="assets/turbine.jpg" alt="[ ảnh 2 ]" loading="lazy">
+        <img src="assets/turbine.jpg" alt="[ ảnh 2 ]" width="800" height="600" loading="lazy">
         <div class="card-label">
           <span>[ bộ phận 2 ]</span>
           <span class="card-tag">[ công nghệ 2 ]</span>
@@ -68,7 +71,7 @@
       </div>
 
       <div class="bento-card">
-        <img src="assets/garden.jpg" alt="[ ảnh 3 ]" loading="lazy">
+        <img src="assets/garden.jpg" alt="[ ảnh 3 ]" width="800" height="600" loading="lazy">
         <div class="card-label">
           <span>[ bộ phận 3 ]</span>
           <span class="card-tag">[ công nghệ 3 ]</span>
@@ -76,7 +79,7 @@
       </div>
 
       <div class="bento-card">
-        <img src="assets/bike.jpg" alt="[ ảnh 4 ]" loading="lazy">
+        <img src="assets/bike.jpg" alt="[ ảnh 4 ]" width="800" height="600" loading="lazy">
         <div class="card-label">
           <span>[ bộ phận 4 ]</span>
           <span class="card-tag">[ công nghệ 4 ]</span>
@@ -250,7 +253,7 @@
   </section>
 
   <footer>
-    <p class="footer-sub"><span class="text-nowrap">cooked with 0h sleep</span> <span class="text-nowrap">&amp; pure larp by sudo-Penguin-Lalala</span></p>
+    <p class="footer-sub"><span class="text-nowrap">cooked with 0h sleep</span> <span class="text-nowrap">&amp; pure larp by <span translate="no">sudo-Penguin-Lalala</span></span></p>
   </footer>
 
   <script>
