@@ -1,3 +1,21 @@
-<svg width="80" height="70" viewBox="0 0 80 70" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M40 0L80 69.282H0L8.45666 54.6347H54.63L40 29.2947L33.8548 39.9385H16.9415L40 0Z" fill="#1A91FF"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="solterraGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34d399" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+    <linearGradient id="sunGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fbbf24" />
+      <stop offset="100%" stop-color="#f59e0b" />
+    </linearGradient>
+  </defs>
+  <!-- Background Shield/Pill -->
+  <rect width="64" height="64" rx="16" fill="#0c2b20" />
+  <!-- Solar Halo Arc -->
+  <circle cx="32" cy="24" r="10" fill="none" stroke="url(#sunGrad)" stroke-width="3" stroke-dasharray="4 2" />
+  <circle cx="32" cy="24" r="6" fill="url(#sunGrad)" />
+  <!-- Bio Leaf / Eco Sprout Structure -->
+  <path d="M32 50 C32 40, 20 36, 20 26 C28 26, 32 34, 32 38 C32 34, 36 26, 44 26 C44 36, 32 40, 32 50 Z" fill="url(#solterraGrad)" />
+  <!-- Stem Base -->
+  <path d="M32 38 L32 52" stroke="#6ee7b7" stroke-width="2.5" stroke-linecap="round" />
 </svg>
