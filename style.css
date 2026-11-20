@@ -338,6 +338,13 @@ a {
   margin-top: var(--space-1);
 }
 
+.hero-team {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-primary-light);
+  margin-top: 2px;
+}
+
 /* Scroll indicator with hover pause for accessibility */
 .scroll-indicator {
   margin-top: var(--space-6);
