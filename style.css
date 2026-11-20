@@ -49,52 +49,54 @@
   --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
   --ease-out-fast: cubic-bezier(0.16, 1, 0.3, 1);
 
-  /* Deep Obsidian Bio-Emerald Canvas & Surfaces */
-  --color-bg-canvas: #061811;
-  --color-bg-base: #0b241b;
-  --color-bg-surface: #103326;
-  --color-bg-elevated: #164232;
+  /* Nordic Sage Pastel & Soft Graphite Canvas */
+  --color-bg-canvas: #0c1411;
+  --color-bg-base: #111a16;
+  --color-bg-surface: #17231e;
+  --color-bg-elevated: #1e2c26;
 
   /* Frosted Acrylic Glass Materials */
-  --color-topbar-glass: rgba(10, 44, 32, 0.92);
-  --color-card-glass: rgba(14, 43, 32, 0.82);
-  --color-card-glass-hover: rgba(20, 60, 45, 0.94);
-  --color-label-bar: #092017;
-  --color-pill-glass: rgba(52, 211, 153, 0.16);
+  --color-topbar-glass: rgba(12, 42, 33, 0.90);
+  --color-card-glass: rgba(20, 42, 35, 0.82);
+  --color-card-glass-hover: rgba(26, 52, 44, 0.94);
+  --color-label-bar: #101915;
+  --color-pill-glass: rgba(167, 243, 208, 0.12);
+  --color-logo-bg: #f7faf9;
 
-  /* Ambient Atmospheric Orbs */
-  --color-ambient-emerald: rgba(52, 211, 153, 0.22);
-  --color-ambient-cyan: rgba(34, 211, 238, 0.16);
-  --color-ambient-center: rgba(16, 185, 129, 0.12);
-  --color-ambient-amber: rgba(245, 158, 11, 0.10);
+  /* Ambient Atmospheric Orbs - Soft & Soothing */
+  --color-ambient-sage: rgba(167, 243, 208, 0.12);
+  --color-ambient-warm: rgba(254, 240, 138, 0.08);
+  --color-ambient-cyan: rgba(186, 230, 253, 0.08);
+  --color-ambient-center: rgba(110, 231, 183, 0.08);
 
   /* Specular Highlights & Glass Edges */
-  --color-border-subtle: rgba(110, 231, 183, 0.16);
-  --color-border-base: rgba(110, 231, 183, 0.28);
-  --color-border-accent: #34d399;
-  --color-border-hover: rgba(167, 243, 208, 0.75);
-  --color-specular: rgba(255, 255, 255, 0.20);
+  --color-border-subtle: rgba(255, 255, 255, 0.08);
+  --color-border-base: rgba(167, 243, 208, 0.18);
+  --color-border-accent: #a7f3d0;
+  --color-border-hover: rgba(167, 243, 208, 0.55);
+  --color-specular: rgba(255, 255, 255, 0.14);
 
-  /* High-Contrast Readable Text */
-  --color-text-main: #f7fbf9;
-  --color-text-body: #ecfdf5;
-  --color-text-muted: #d1fae5;
-  --color-text-dim: #a7f3d0;
+  /* High-Contrast Neutral & Eye-Pleasing Text (No Green Glare) */
+  --color-text-main: #f7faf9;
+  --color-text-body: #e2e8f0;
+  --color-text-muted: #94a3b8;
+  --color-text-dim: #8b9baa;
   --color-text-inverse: #022c22;
 
-  --color-primary: #34d399;
-  --color-primary-light: #6ee7b7;
-  --color-secondary: #22d3ee;
+  /* Soothing Pastel Accents */
+  --color-primary: #86efac;
+  --color-primary-light: #a7f3d0;
+  --color-secondary: #bae6fd;
 
-  /* Solar Warmth & Energy Accents */
-  --color-accent-amber: #fbbf24;
-  --color-accent-gold: #f59e0b;
-  --color-accent-warm-glass: rgba(251, 191, 36, 0.12);
-  --color-border-warm: rgba(251, 191, 36, 0.38);
+  /* Pastel Solar Amber */
+  --color-accent-amber: #fde047;
+  --color-accent-gold: #facc15;
+  --color-accent-warm-glass: rgba(253, 224, 71, 0.10);
+  --color-border-warm: rgba(253, 224, 71, 0.30);
 
   /* Directional Shadows */
-  --color-shadow-card: rgba(2, 10, 7, 0.55);
-  --color-shadow-hover: rgba(2, 10, 7, 0.75);
+  --color-shadow-card: rgba(0, 0, 0, 0.35);
+  --color-shadow-hover: rgba(0, 0, 0, 0.55);
 
   --space-1: 4px;
   --space-2: 8px;
@@ -136,8 +138,8 @@ body {
   font-family: var(--font-body);
   background-color: var(--color-bg-canvas);
   background-image:
-    radial-gradient(900px 500px at 15% 10%, var(--color-ambient-emerald), transparent 60%),
-    radial-gradient(800px 450px at 85% 15%, var(--color-ambient-amber), transparent 60%),
+    radial-gradient(900px 500px at 15% 10%, var(--color-ambient-sage), transparent 60%),
+    radial-gradient(800px 450px at 85% 15%, var(--color-ambient-warm), transparent 60%),
     radial-gradient(800px 450px at 85% 45%, var(--color-ambient-cyan), transparent 60%),
     radial-gradient(1000px 600px at 50% 80%, var(--color-ambient-center), transparent 70%);
   background-attachment: fixed;
