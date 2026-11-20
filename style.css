@@ -57,11 +57,11 @@
 
   /* Frosted Acrylic Glass Materials */
   --color-topbar-glass: rgba(12, 42, 33, 0.90);
+  --color-hero-glass: rgba(16, 42, 34, 0.78);
   --color-card-glass: rgba(20, 42, 35, 0.82);
   --color-card-glass-hover: rgba(26, 52, 44, 0.94);
   --color-label-bar: #101915;
   --color-pill-glass: rgba(167, 243, 208, 0.12);
-  --color-logo-bg: #f7faf9;
 
   /* Ambient Atmospheric Orbs - Luminous Bio-Aura */
   --color-ambient-sage: rgba(52, 211, 153, 0.22);
@@ -200,14 +200,10 @@ a {
 }
 
 .logo {
-  width: 54px;
-  height: 54px;
-  border-radius: var(--radius-pill);
+  width: 64px;
+  height: 64px;
   object-fit: contain;
-  background-color: var(--color-logo-bg);
-  padding: 2px;
-  border: 1px solid var(--color-border-base);
-  box-shadow: 0 2px 8px var(--color-shadow-card);
+  filter: drop-shadow(0 2px 8px var(--color-shadow-card));
   transition: transform 0.2s var(--ease-apple);
 }
 
@@ -257,7 +253,7 @@ a {
 
 /* Hero Section - True Full-Screen Viewport Landing */
 .hero {
-  height: calc(100dvh - 78px);
+  height: calc(100dvh - 88px);
   min-height: 520px;
   display: flex;
   align-items: center;
@@ -307,12 +303,20 @@ a {
 
 .hero-content {
   max-width: 760px;
+  width: 100%;
   position: relative;
   z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: var(--space-3);
+  padding: var(--space-8) var(--space-8);
+  background-color: var(--color-hero-glass);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 8px 20px var(--color-shadow-card), inset 0 1px 0 var(--color-specular);
 }
 
 .school-tag {
@@ -371,12 +375,14 @@ a {
 
 /* Scroll indicator with hover pause for accessibility */
 .scroll-indicator {
-  margin-top: var(--space-6);
+  margin-top: var(--space-4);
   font-size: var(--text-lg);
   color: var(--color-primary-light);
   animation: floatBounce 2.5s ease-in-out infinite;
   display: inline-block;
-  cursor: default;
+  cursor: pointer;
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-pill);
 }
 
 .scroll-indicator:hover,
@@ -680,8 +686,8 @@ footer {
   }
 
   .logo {
-    width: 46px;
-    height: 46px;
+    width: 52px;
+    height: 52px;
   }
 
   .brand-text {
@@ -693,13 +699,15 @@ footer {
   }
 
   .hero {
-    height: calc(100dvh - 72px - env(safe-area-inset-top, 0px));
+    height: calc(100dvh - 76px - env(safe-area-inset-top, 0px));
     min-height: 480px;
     padding: var(--space-4) var(--space-3);
   }
 
   .hero-content {
     gap: var(--space-2);
+    padding: var(--space-6) var(--space-4);
+    border-radius: var(--radius-md);
   }
 }
 
