@@ -49,46 +49,46 @@
   --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
   --ease-out-fast: cubic-bezier(0.16, 1, 0.3, 1);
 
-  /* Midnight Forest & Deep Slate Canvas (Clean, Bright, Never Gloomy) */
-  --color-bg-canvas: #0e1714;
-  --color-bg-base: #131e1a;
-  --color-bg-surface: #141f1b;
-  --color-bg-elevated: #1a2a23;
+  /* Apple Eco-Obsidian Canvas (Clean, Vibrant, Never Murky) */
+  --color-bg-canvas: #0c120f;
+  --color-bg-base: #101713;
+  --color-bg-surface: #131d18;
+  --color-bg-elevated: #1a2721;
 
-  /* Frosted Acrylic Glass Materials & Solid Surfaces */
-  --color-topbar-glass: rgba(14, 23, 20, 0.95);
-  --color-hero-fade: rgba(11, 19, 16, 0.65);
-  --color-card-surface: #141f1b;
-  --color-card-surface-hover: #192722;
-  --color-label-bar: #101916;
-  --color-pill-glass: rgba(52, 211, 153, 0.12);
+  /* Frosted Acrylic Glass Materials & High-Precision Surfaces */
+  --color-topbar-glass: rgba(12, 18, 15, 0.94);
+  --color-hero-fade: rgba(10, 16, 13, 0.60);
+  --color-card-surface: #131d18;
+  --color-card-surface-hover: #17241e;
+  --color-label-bar: #0f1814;
+  --color-pill-glass: rgba(52, 211, 153, 0.14);
 
-  /* Multi-Spectrum Ambient Horizon (Eco Emerald + Clear Sky Cyan + Solar Warmth) */
-  --color-ambient-sage: rgba(52, 211, 153, 0.14);
-  --color-ambient-warm: rgba(251, 191, 36, 0.10);
-  --color-ambient-cyan: rgba(56, 189, 248, 0.10);
-  --color-ambient-center: rgba(16, 185, 129, 0.08);
-  --color-hero-aura: rgba(52, 211, 153, 0.12);
-  --color-hero-warm-aura: rgba(251, 191, 36, 0.08);
+  /* Luminous Bio-Horizon (Bright, Fresh, Optimistic Future City Glow) */
+  --color-ambient-sage: rgba(52, 211, 153, 0.20);
+  --color-ambient-warm: rgba(250, 204, 21, 0.14);
+  --color-ambient-cyan: rgba(56, 189, 248, 0.14);
+  --color-ambient-center: rgba(16, 185, 129, 0.10);
+  --color-hero-aura: rgba(52, 211, 153, 0.18);
+  --color-hero-warm-aura: rgba(250, 204, 21, 0.12);
 
   /* Specular Highlights & Glass Edges */
   --color-border-subtle: rgba(255, 255, 255, 0.08);
   --color-border-base: rgba(255, 255, 255, 0.12);
-  --color-border-accent: #6ee7b7;
-  --color-border-hover: rgba(52, 211, 153, 0.55);
-  --color-specular: rgba(255, 255, 255, 0.10);
+  --color-border-accent: #34d399;
+  --color-border-hover: rgba(52, 211, 153, 0.65);
+  --color-specular: rgba(255, 255, 255, 0.14);
 
-  /* High-Contrast WCAG AAA Text (Custom Bio-Tinted, Crisp, No Tailwind Palette Cliché) */
-  --color-text-main: #f5f9f7;
-  --color-text-body: #dce7e2;
+  /* High-Contrast Pristine White & Silver (Pure Apple Legibility, WCAG AAA) */
+  --color-text-main: #f6fbf8;
+  --color-text-body: #e1ebe6;
   --color-text-muted: #cbd7d2;
   --color-text-dim: #cbd7d2;
   --color-text-inverse: #022c22;
 
-  /* Soothing Bio-Emerald Accents */
-  --color-primary: #34d399;
-  --color-primary-light: #6ee7b7;
-  --color-secondary: #7dd3fc;
+  /* Vibrant Luminous Bio-Emerald Accents */
+  --color-primary: #10b981;
+  --color-primary-light: #34d399;
+  --color-secondary: #38bdf8;
 
   /* Pastel Solar Amber */
   --color-accent-amber: #fde047;
@@ -205,15 +205,13 @@ button:disabled {
   pointer-events: none;
 }
 
-/* Apple-style Frosted Glass Topbar with Centered Capped Container */
+/* Apple-style Topbar with Centered Capped Container */
 .topbar {
   padding-top: calc(var(--space-3) + env(safe-area-inset-top, 0px));
   padding-bottom: var(--space-3);
   padding-left: max(var(--space-4), env(safe-area-inset-left, 0px));
   padding-right: max(var(--space-4), env(safe-area-inset-right, 0px));
   background-color: var(--color-topbar-glass);
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
   border-bottom: 1px solid var(--color-border-subtle);
   position: sticky;
   top: 0;
