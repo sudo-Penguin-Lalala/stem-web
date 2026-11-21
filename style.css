@@ -764,6 +764,14 @@ button.scroll-indicator:focus-visible {
   font-size: var(--text-sm);
 }
 
+.footer-sub {
+  font-size: var(--text-xs);
+  color: var(--color-text-dim);
+  font-family: var(--font-mono);
+  margin-top: var(--space-2);
+  opacity: 0.75;
+}
+
 .text-nowrap {
   white-space: nowrap;
 }
