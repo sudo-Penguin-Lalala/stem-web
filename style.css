@@ -49,46 +49,46 @@
   --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
   --ease-out-fast: cubic-bezier(0.16, 1, 0.3, 1);
 
-  /* Nordic Sage Pastel & Soft Graphite Canvas */
-  --color-bg-canvas: #0c1411;
-  --color-bg-base: #111a16;
-  --color-bg-surface: #17231e;
-  --color-bg-elevated: #1e2c26;
+  /* Midnight Forest & Deep Slate Canvas (Clean, Bright, Never Gloomy) */
+  --color-bg-canvas: #0e1714;
+  --color-bg-base: #131e1a;
+  --color-bg-surface: #182621;
+  --color-bg-elevated: #20312b;
 
-  /* Frosted Acrylic Glass Materials */
-  --color-topbar-glass: rgba(12, 42, 33, 0.90);
-  --color-hero-fade: rgba(8, 20, 15, 0.72);
-  --color-card-glass: rgba(20, 42, 35, 0.82);
-  --color-card-glass-hover: rgba(26, 52, 44, 0.94);
-  --color-label-bar: #101915;
-  --color-pill-glass: rgba(167, 243, 208, 0.12);
+  /* Frosted Acrylic Glass Materials (Refined Specular Depth) */
+  --color-topbar-glass: rgba(14, 23, 20, 0.85);
+  --color-hero-fade: rgba(11, 19, 16, 0.65);
+  --color-card-glass: rgba(18, 28, 24, 0.78);
+  --color-card-glass-hover: rgba(24, 37, 32, 0.92);
+  --color-label-bar: #131e1a;
+  --color-pill-glass: rgba(52, 211, 153, 0.12);
 
-  /* Ambient Atmospheric Orbs - Luminous Bio-Aura */
-  --color-ambient-sage: rgba(52, 211, 153, 0.22);
-  --color-ambient-warm: rgba(251, 191, 36, 0.16);
-  --color-ambient-cyan: rgba(34, 211, 238, 0.14);
-  --color-ambient-center: rgba(16, 185, 129, 0.12);
-  --color-hero-aura: rgba(52, 211, 153, 0.18);
-  --color-hero-warm-aura: rgba(251, 191, 36, 0.12);
+  /* Multi-Spectrum Ambient Horizon (Eco Emerald + Clear Sky Cyan + Solar Warmth) */
+  --color-ambient-sage: rgba(52, 211, 153, 0.14);
+  --color-ambient-warm: rgba(251, 191, 36, 0.10);
+  --color-ambient-cyan: rgba(56, 189, 248, 0.10);
+  --color-ambient-center: rgba(16, 185, 129, 0.08);
+  --color-hero-aura: rgba(52, 211, 153, 0.12);
+  --color-hero-warm-aura: rgba(251, 191, 36, 0.08);
 
   /* Specular Highlights & Glass Edges */
   --color-border-subtle: rgba(255, 255, 255, 0.08);
-  --color-border-base: rgba(167, 243, 208, 0.18);
-  --color-border-accent: #a7f3d0;
-  --color-border-hover: rgba(167, 243, 208, 0.55);
-  --color-specular: rgba(255, 255, 255, 0.14);
+  --color-border-base: rgba(255, 255, 255, 0.12);
+  --color-border-accent: #6ee7b7;
+  --color-border-hover: rgba(52, 211, 153, 0.55);
+  --color-specular: rgba(255, 255, 255, 0.12);
 
-  /* High-Contrast Neutral & Eye-Pleasing Text (No Green Glare) */
-  --color-text-main: #f7faf9;
+  /* High-Contrast Neutral & Eye-Pleasing Text (Crisp White, No Eye Strain) */
+  --color-text-main: #f6faf8;
   --color-text-body: #e2e8f0;
   --color-text-muted: #94a3b8;
-  --color-text-dim: #8b9baa;
+  --color-text-dim: #94a3b8;
   --color-text-inverse: #022c22;
 
-  /* Soothing Pastel Accents */
-  --color-primary: #86efac;
-  --color-primary-light: #a7f3d0;
-  --color-secondary: #bae6fd;
+  /* Soothing Bio-Emerald Accents */
+  --color-primary: #34d399;
+  --color-primary-light: #6ee7b7;
+  --color-secondary: #7dd3fc;
 
   /* Pastel Solar Amber */
   --color-accent-amber: #fde047;
