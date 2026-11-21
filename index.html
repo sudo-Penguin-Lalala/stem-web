@@ -278,19 +278,12 @@
       const container = document.querySelector('.floating-icons');
       if (!container) return;
       const isMobile = window.innerWidth <= 600;
-      const count = isMobile ? 12 : 24;
+      const count = isMobile ? 16 : 28;
+      const slotWidth = 94 / count;
       for (let i = 0; i < count; i++) {
         const span = document.createElement('span');
         span.textContent = icons[i % icons.length];
-        let left;
-        const r = Math.random();
-        if (r < 0.44) {
-          left = 2 + Math.random() * 28;
-        } else if (r < 0.88) {
-          left = 70 + Math.random() * 28;
-        } else {
-          left = 32 + Math.random() * 36;
-        }
+        const left = 3 + (i * slotWidth) + (Math.random() * (slotWidth * 0.75));
         span.style.left = left.toFixed(1) + '%';
         span.style.bottom = '-50px';
         const duration = 16 + Math.random() * 10;
