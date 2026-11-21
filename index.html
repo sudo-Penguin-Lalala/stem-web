@@ -30,6 +30,7 @@
 
   <header class="hero">
     <div class="hero-ambient" aria-hidden="true"></div>
+    <div class="floating-icons" aria-hidden="true"></div>
     <div class="hero-content">
       <h1 class="hero-title">[ tên dự án ]</h1>
       <p class="hero-subtitle">Cities of the Future: [ đề tài ]</p>
@@ -269,5 +270,36 @@
   <footer>
     <p class="footer-sub"><span class="text-nowrap">cooked with 0h sleep</span> <span class="text-nowrap">&amp; pure larp by <span translate="no">sudo-Penguin-Lalala</span></span></p>
   </footer>
+
+  <script>
+    // Lightweight 60fps Eco Particles (GPU-only composite, zero filter overhead)
+    (function() {
+      const icons = ['☀️','🌱','💨','🔋','♻️','🌍','💡','🚲','🌿','⚡','🏡','🌻','🍃','💧','🌞'];
+      const container = document.querySelector('.floating-icons');
+      if (!container) return;
+      const isMobile = window.innerWidth <= 600;
+      const count = isMobile ? 12 : 24;
+      for (let i = 0; i < count; i++) {
+        const span = document.createElement('span');
+        span.textContent = icons[i % icons.length];
+        let left;
+        const r = Math.random();
+        if (r < 0.44) {
+          left = 2 + Math.random() * 28;
+        } else if (r < 0.88) {
+          left = 70 + Math.random() * 28;
+        } else {
+          left = 32 + Math.random() * 36;
+        }
+        span.style.left = left.toFixed(1) + '%';
+        span.style.bottom = '-50px';
+        const duration = 16 + Math.random() * 10;
+        span.style.animationDuration = duration + 's';
+        span.style.animationDelay = (-Math.random() * duration) + 's';
+        span.style.fontSize = (1.15 + Math.random() * 1.1) + 'rem';
+        container.appendChild(span);
+      }
+    })();
+  </script>
 </body>
 </html>

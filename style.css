@@ -312,6 +312,41 @@ button:disabled {
     radial-gradient(circle 320px at 78% 22%, var(--color-hero-warm-aura) 0%, transparent 60%);
 }
 
+/* Lightweight 60fps Eco Floating Particles (Zero Filter, Pure GPU Composite) */
+.floating-icons {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.floating-icons span {
+  position: absolute;
+  bottom: -50px;
+  opacity: 0;
+  animation: floatRise linear infinite;
+  will-change: transform, opacity;
+  user-select: none;
+}
+
+@keyframes floatRise {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  8% {
+    opacity: 0.65;
+  }
+  90% {
+    opacity: 0.65;
+  }
+  100% {
+    transform: translateY(-135vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
 .hero-content {
   max-width: 680px;
   width: 90%;
@@ -800,7 +835,8 @@ footer {
     scroll-behavior: auto !important;
   }
 
-  .hero-ambient {
+  .hero-ambient,
+  .floating-icons {
     display: none !important;
   }
 }
