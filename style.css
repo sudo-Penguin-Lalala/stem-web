@@ -616,7 +616,8 @@ video::cue {
   background-color: var(--color-topbar-glass);
   color: var(--color-text-main);
   font-family: var(--font-sans);
-  font-size: 0.95rem;
+  font-size: clamp(1rem, 2.2vw, 1.35rem);
+  line-height: 1.4;
 }
 
 /* STEM 4-Pillar Grid & Collapsible Details */
