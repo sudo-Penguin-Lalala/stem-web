@@ -558,9 +558,21 @@ button.scroll-indicator:focus-visible {
   }
 }
 
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+@media (max-width: 768px) {
+  .video-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
 .bento-card video {
   width: 100%;
-  max-height: 520px;
   aspect-ratio: 16 / 9;
   object-fit: contain;
   background-color: var(--color-bg-deep);
@@ -570,9 +582,13 @@ button.scroll-indicator:focus-visible {
 /* Imagery sits still; container provides tactile physical response */
 .bento-card img {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
   display: block;
+}
+
+.bento-card.is-clickable {
+  cursor: zoom-in;
 }
 
 /* Layered Solid Acrylic Label Bar (Clean Surface Elevation) */
@@ -785,6 +801,74 @@ footer {
 
 .text-nowrap {
   white-space: nowrap;
+}
+
+/* Native Image Lightbox Dialog */
+.lightbox-dialog {
+  margin: auto;
+  padding: 0;
+  border: 1px solid var(--color-border-base);
+  border-radius: var(--radius-md);
+  background-color: var(--color-bg-deep);
+  color: var(--color-text-main);
+  max-width: min(94vw, 1080px);
+  max-height: 90dvh;
+  overflow: hidden;
+}
+
+.lightbox-dialog::backdrop {
+  background-color: var(--color-hero-fade);
+}
+
+.lightbox-frame {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.lightbox-img {
+  display: block;
+  max-width: 100%;
+  max-height: calc(90dvh - 56px);
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  background-color: var(--color-bg-deep);
+}
+
+.lightbox-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  background-color: var(--color-label-bar);
+  border-top: 1px solid var(--color-border-subtle);
+  font-size: var(--text-sm);
+  color: var(--color-text-main);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  min-width: 44px;
+  min-height: 44px;
+  border: 1px solid var(--color-border-base);
+  border-radius: var(--radius-pill);
+  background-color: var(--color-topbar-glass);
+  color: var(--color-text-main);
+  font-size: var(--text-lg);
+  line-height: 1;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-close:focus-visible {
+  outline: 2px solid var(--color-primary-light);
+  outline-offset: 2px;
 }
 
 @media (max-width: 480px) {

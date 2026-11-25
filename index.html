@@ -7,7 +7,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <title>Green City of the Future - THPT Nguyễn Trãi - Bình Dương (11A9 English STEM)</title>
-  <meta name="description" content="Green City of the Future STEM model by Class 11A9 (Group 3 + 4): underground hydropower, geothermal energy, elevated rail, VinFast EVs, tuned mass damper, and weather radar.">
+  <meta name="description" content="Green City of the Future STEM model by Class 11A9 (Groups 3 & 4): underground hydropower, geothermal energy, monorail, VinFast EVs, tuned mass damper, and weather radar.">
   <link rel="preload" href="assets/fonts/space-grotesk-vietnamese.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -22,7 +22,7 @@
         <img src="assets/logo.png" alt="THPT Nguyễn Trãi - Bình Dương" class="logo" width="64" height="64" fetchpriority="high">
         <div class="brand-info">
           <span class="brand-text">THPT Nguyễn Trãi - Bình Dương</span>
-          <span class="brand-school">Class 11A9 (Group 3 + 4)</span>
+          <span class="brand-school">Class 11A9 (Groups 3 &amp; 4)</span>
         </div>
       </div>
     </div>
@@ -36,12 +36,11 @@
       <p class="hero-subtitle">Cities of the Future: Clean Energy &amp; Resilient Infrastructure</p>
       <p class="hero-slogan">Where technology blends with nature: zero harmful emissions, built for life.</p>
       <div class="hero-advisor">
-        <span class="advisor-label">Advisor:</span>
+        <span class="advisor-label">English Teacher:</span>
         <strong class="advisor-name">Ms. Huỳnh Như Thủy</strong>
-        <span class="advisor-dept">(Foreign Languages Dept.)</span>
       </div>
-      <p class="hero-team">Team: Group 3 + 4</p>
-      <button type="button" class="scroll-indicator" aria-label="Scroll to technical model" onclick="document.querySelector('#main-content').scrollIntoView({behavior: 'smooth'})">
+      <p class="hero-team">Presented by Groups 3 &amp; 4</p>
+      <button type="button" class="scroll-indicator" aria-label="Scroll to model and features" onclick="document.querySelector('#main-content').scrollIntoView({behavior: 'smooth'})">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="m6 9 6 6 6-6"/>
         </svg>
@@ -51,9 +50,10 @@
 
   <main id="main-content" tabindex="-1">
     <section class="bento-section">
-      <h2 class="section-title">Model &amp; Subsystems</h2>
-      <div class="bento">
-        <div class="bento-card large">
+      <h2 class="section-title">Model &amp; Features</h2>
+
+      <div class="video-grid">
+        <div class="bento-card">
           <video controls preload="metadata" poster="assets/thumb.png" width="800" height="450" playsinline>
             <source src="assets/video.mp4" type="video/mp4">
             <track src="assets/subtitles.vtt" kind="subtitles" srclang="en" label="English" default>
@@ -65,47 +65,59 @@
         </div>
 
         <div class="bento-card">
-          <img src="assets/house.jpg" alt="Innovation Center, Weather Radar tower, Tuned Mass Damper skyscraper, and elevated rail" width="800" height="600" loading="lazy">
+          <video controls preload="metadata" poster="assets/house.jpg" width="800" height="450" playsinline muted>
+            <source src="assets/model-tour.mp4" type="video/mp4">
+          </video>
+          <div class="card-label">
+            <span>Model Overview Clip</span>
+            <span class="card-tag">Walkthrough</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="bento">
+        <div class="bento-card is-clickable" tabindex="0" role="button" aria-label="Zoom image: Weather Radar &amp; Seismic Damper">
+          <img src="assets/house.jpg" alt="Innovation Center, Weather Radar tower, Tuned Mass Damper skyscraper, and monorail" width="800" height="450" loading="lazy">
           <div class="card-label">
             <span>Weather Radar &amp; Seismic Damper</span>
-            <span class="card-tag">Early Warning · Safety</span>
+            <span class="card-tag">Early Warning</span>
           </div>
         </div>
 
-        <div class="bento-card">
-          <img src="assets/turbine.jpg" alt="Underground Hydropower and Geothermal Power Plant cross-section model" width="800" height="600" loading="lazy">
+        <div class="bento-card is-clickable" tabindex="0" role="button" aria-label="Zoom image: Underground Hydro &amp; Geothermal">
+          <img src="assets/turbine.jpg" alt="Underground Hydropower and Geothermal Power Plant cross-section model" width="800" height="450" loading="lazy">
           <div class="card-label">
             <span>Underground Hydro &amp; Geothermal</span>
-            <span class="card-tag">24/7 Self-Sufficient</span>
+            <span class="card-tag">Clean Energy</span>
           </div>
         </div>
 
-        <div class="bento-card">
-          <img src="assets/garden.jpg" alt="Green lungs park corridor and electric vehicle road" width="800" height="600" loading="lazy">
+        <div class="bento-card is-clickable" tabindex="0" role="button" aria-label="Zoom image: Green Lungs &amp; Monorail">
+          <img src="assets/garden.jpg" alt="Green lungs park corridor and electric vehicle road" width="800" height="450" loading="lazy">
           <div class="card-label">
             <span>Green Lungs &amp; Monorail</span>
-            <span class="card-tag">Anti-Congestion · Parks</span>
+            <span class="card-tag">Urban Parks</span>
           </div>
         </div>
 
-        <div class="bento-card">
-          <img src="assets/bike.jpg" alt="VinFast electric vehicles, Hydrogen station, and flying car transit" width="800" height="600" loading="lazy">
+        <div class="bento-card is-clickable" tabindex="0" role="button" aria-label="Zoom image: VinFast EVs &amp; Hydrogen">
+          <img src="assets/bike.jpg" alt="VinFast electric vehicles, Hydrogen station, and flying car transit" width="800" height="450" loading="lazy">
           <div class="card-label">
             <span>VinFast EVs &amp; Hydrogen</span>
-            <span class="card-tag">Zero-Emission Transit</span>
+            <span class="card-tag">Green Transit</span>
           </div>
         </div>
 
-        <div class="bento-card">
-          <img src="assets/craft1.jpg" alt="Cutting cardboard frames and building windows" width="800" height="600" loading="lazy">
+        <div class="bento-card is-clickable" tabindex="0" role="button" aria-label="Zoom image: Model Framing">
+          <img src="assets/craft1.jpg" alt="Cutting cardboard frames and building windows" width="800" height="450" loading="lazy">
           <div class="card-label">
             <span>Model Framing</span>
             <span class="card-tag">Build Process</span>
           </div>
         </div>
 
-        <div class="bento-card">
-          <img src="assets/craft2.jpg" alt="Team members painting and assembling model parts" width="800" height="600" loading="lazy">
+        <div class="bento-card is-clickable" tabindex="0" role="button" aria-label="Zoom image: Painting &amp; Assembly">
+          <img src="assets/craft2.jpg" alt="Team members painting and assembling model parts" width="800" height="450" loading="lazy">
           <div class="card-label">
             <span>Painting &amp; Assembly</span>
             <span class="card-tag">Build Process</span>
@@ -115,7 +127,7 @@
     </section>
 
   <section class="stats-section">
-    <h2 class="section-title">Metrics &amp; Budget</h2>
+    <h2 class="section-title">Key Figures &amp; Budget</h2>
     <div class="stats-grid">
       <div class="stat-card">
         <div class="stat-number">4</div>
@@ -123,7 +135,7 @@
       </div>
       <div class="stat-card">
         <div class="stat-number">2</div>
-        <div class="stat-label">Disaster Systems (Weather Radar &amp; Damped Pendulum)</div>
+        <div class="stat-label">Disaster Systems (Weather Radar &amp; Tuned Mass Damper)</div>
       </div>
       <div class="stat-card">
         <div class="stat-number">[ budget ]</div>
@@ -133,7 +145,7 @@
   </section>
 
   <section class="team-section">
-    <h2 class="section-title">Team Members (Group 3 &amp; Group 4)</h2>
+    <h2 class="section-title">Team Members</h2>
     <div class="roster-grid">
       <!-- Panel Group 3 -->
       <div class="roster-panel">
@@ -225,7 +237,7 @@
             <tr>
               <td class="col-stt">02</td>
               <td class="col-name">Ngọc Thiện</td>
-              <td class="col-role">Web Showcase</td>
+              <td class="col-role">Website &amp; Media</td>
             </tr>
             <tr>
               <td class="col-stt">03</td>
@@ -284,6 +296,16 @@
   </section>
   </main>
 
+  <dialog id="image-lightbox" class="lightbox-dialog" aria-label="Image preview">
+    <div class="lightbox-frame">
+      <button type="button" class="lightbox-close" aria-label="Close image preview">&times;</button>
+      <img class="lightbox-img" src="assets/house.jpg" alt="" loading="lazy">
+      <div class="lightbox-bar">
+        <span class="lightbox-caption"></span>
+      </div>
+    </div>
+  </dialog>
+
   <footer>
     <p class="footer-sub"><span class="text-nowrap">cooked with 0h sleep</span> <span class="text-nowrap">&amp; pure larp by <span translate="no">sudo-Penguin-Lalala</span></span></p>
   </footer>
@@ -310,6 +332,40 @@
         span.style.fontSize = (baseSize + Math.random() * 1.35) + 'rem';
         container.appendChild(span);
       }
+    })();
+
+    // Native Dialog Lightbox for Model Photos
+    (function() {
+      const dialog = document.getElementById('image-lightbox');
+      if (!dialog) return;
+      const fullImg = dialog.querySelector('.lightbox-img');
+      const caption = dialog.querySelector('.lightbox-caption');
+      const closeBtn = dialog.querySelector('.lightbox-close');
+
+      function openPreview(card) {
+        const img = card.querySelector('img');
+        const label = card.querySelector('.card-label span');
+        if (!img) return;
+        fullImg.src = img.src;
+        fullImg.alt = img.alt;
+        caption.textContent = label ? label.textContent : img.alt;
+        dialog.showModal();
+      }
+
+      document.querySelectorAll('.bento-card.is-clickable').forEach(function(card) {
+        card.addEventListener('click', function() { openPreview(card); });
+        card.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            openPreview(card);
+          }
+        });
+      });
+
+      closeBtn.addEventListener('click', function() { dialog.close(); });
+      dialog.addEventListener('click', function(e) {
+        if (e.target === dialog) dialog.close();
+      });
     })();
   </script>
 </body>
