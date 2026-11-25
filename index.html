@@ -54,7 +54,8 @@
 
       <div class="video-grid">
         <div class="bento-card">
-          <video controls preload="auto" poster="assets/thumb.jpg" data-src="assets/video.mp4" width="800" height="450" playsinline>
+          <video controls preload="metadata" poster="assets/thumb.jpg" data-src="assets/video.mp4" width="800" height="450" playsinline>
+            <source src="assets/video.mp4" type="video/mp4">
             <track src="assets/subtitles.vtt" kind="subtitles" srclang="en" label="English" default>
           </video>
           <div class="card-label">
@@ -64,7 +65,8 @@
         </div>
 
         <div class="bento-card">
-          <video controls preload="auto" poster="assets/house.jpg" data-src="assets/model-tour.mp4" width="800" height="450" playsinline muted>
+          <video controls preload="metadata" poster="assets/house.jpg" data-src="assets/model-tour.mp4" width="800" height="450" playsinline muted>
+            <source src="assets/model-tour.mp4" type="video/mp4">
           </video>
           <div class="card-label">
             <span>Model Overview Clip</span>
@@ -202,48 +204,48 @@
             </tr>
             <tr>
               <td class="col-stt">02</td>
-              <td class="col-name">Phúc An</td>
-              <td class="col-role">Poster Design</td>
-            </tr>
-            <tr>
-              <td class="col-stt">03</td>
-              <td class="col-name">Khánh Thiện</td>
-              <td class="col-role">Poster Design</td>
-            </tr>
-            <tr>
-              <td class="col-stt">04</td>
               <td class="col-name">Mai Chi</td>
               <td class="col-role">Lead Model Builder</td>
             </tr>
             <tr>
-              <td class="col-stt">05</td>
+              <td class="col-stt">03</td>
               <td class="col-name">Anh Đào</td>
               <td class="col-role">Lead Model Builder</td>
             </tr>
             <tr>
-              <td class="col-stt">06</td>
+              <td class="col-stt">04</td>
               <td class="col-name">Thiên Hân</td>
               <td class="col-role">Lead Model Builder</td>
             </tr>
             <tr>
-              <td class="col-stt">07</td>
+              <td class="col-stt">05</td>
               <td class="col-name">Khánh Minh</td>
               <td class="col-role">Model Builder (Support)</td>
             </tr>
             <tr>
-              <td class="col-stt">08</td>
+              <td class="col-stt">06</td>
               <td class="col-name">Ánh Tuyết</td>
               <td class="col-role">Model Builder (Support)</td>
             </tr>
             <tr>
-              <td class="col-stt">09</td>
+              <td class="col-stt">07</td>
               <td class="col-name">Phương Uyên</td>
               <td class="col-role">Model Builder (Support)</td>
             </tr>
             <tr>
-              <td class="col-stt">10</td>
+              <td class="col-stt">08</td>
+              <td class="col-name">Khánh Thiện</td>
+              <td class="col-role">Poster Design</td>
+            </tr>
+            <tr>
+              <td class="col-stt">09</td>
               <td class="col-name">Trọng Nhân</td>
               <td class="col-role">Materials Prep</td>
+            </tr>
+            <tr>
+              <td class="col-stt">10</td>
+              <td class="col-name">Phúc An</td>
+              <td class="col-role">Poster Design</td>
             </tr>
           </tbody>
         </table>
@@ -270,33 +272,33 @@
             </tr>
             <tr>
               <td class="col-stt">02</td>
-              <td class="col-name">Ngọc Thiện</td>
-              <td class="col-role">Website &amp; QR Code</td>
-            </tr>
-            <tr>
-              <td class="col-stt">03</td>
               <td class="col-name">Mỹ Dung</td>
               <td class="col-role">Lead Model Builder</td>
             </tr>
             <tr>
-              <td class="col-stt">04</td>
+              <td class="col-stt">03</td>
               <td class="col-name">Yến Nhi</td>
               <td class="col-role">Lead Model Builder</td>
             </tr>
             <tr>
-              <td class="col-stt">05</td>
+              <td class="col-stt">04</td>
               <td class="col-name">Ngọc Trâm</td>
               <td class="col-role">Lead Model Builder</td>
             </tr>
             <tr>
-              <td class="col-stt">06</td>
+              <td class="col-stt">05</td>
               <td class="col-name">Thanh Trúc</td>
               <td class="col-role">Lead Model Builder</td>
             </tr>
             <tr>
-              <td class="col-stt">07</td>
+              <td class="col-stt">06</td>
               <td class="col-name">Cẩm Tú</td>
               <td class="col-role">Lead Model Builder</td>
+            </tr>
+            <tr>
+              <td class="col-stt">07</td>
+              <td class="col-name">Ngọc Thiện</td>
+              <td class="col-role">Website &amp; QR Code</td>
             </tr>
             <tr>
               <td class="col-stt">08</td>
@@ -402,8 +404,12 @@
       });
     })();
 
-    // Buffer videos sequentially after window load so the page never stays stuck loading
+    // Buffer videos via Blob only on desktop Firefox/Zen where HTTP 200 non-Range breaks seeking;
+    // Mobile (iOS Safari / Android) uses native <source> directly for instant playback.
     window.addEventListener('load', function() {
+      const ua = navigator.userAgent || '';
+      const isDesktopFirefox = /Firefox/i.test(ua) && !/Mobi|Android|iPhone|iPad/i.test(ua);
+      if (!isDesktopFirefox) return;
       setTimeout(function() {
         const videos = Array.from(document.querySelectorAll('video[data-src]'));
         function loadNext(index) {
