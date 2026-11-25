@@ -602,6 +602,119 @@ button.scroll-indicator:focus-visible {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+video::cue {
+  background-color: var(--color-topbar-glass);
+  color: var(--color-text-main);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+}
+
+/* STEM 4-Pillar Grid & Collapsible Details */
+.stem-section {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-4) var(--space-12) var(--space-4);
+}
+
+.stem-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+@media (max-width: 768px) {
+  .stem-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.stem-card {
+  background-color: var(--color-bg-surface);
+  color: var(--color-text-main);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+  padding: var(--space-5);
+  box-shadow: 0 4px 16px var(--color-shadow-card), inset 0 1px 0 var(--color-specular);
+}
+
+.stem-card-title {
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--color-primary-light);
+  margin-bottom: var(--space-2);
+}
+
+.stem-card p {
+  font-size: var(--text-sm);
+  line-height: 1.55;
+  color: var(--color-text-body);
+}
+
+.details-drawer {
+  margin-top: var(--space-4);
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.details-drawer summary {
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text-main);
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.details-drawer summary::-webkit-details-marker {
+  display: none;
+}
+
+.details-drawer summary::after {
+  content: '+';
+  color: var(--color-primary-light);
+  font-size: var(--text-base);
+}
+
+.details-drawer[open] summary::after {
+  content: '−';
+}
+
+.details-body {
+  padding: 0 var(--space-4) var(--space-4) var(--space-4);
+  border-top: 1px solid var(--color-border-subtle);
+  font-size: var(--text-sm);
+  color: var(--color-text-body);
+  line-height: 1.6;
+}
+
+.budget-list {
+  list-style: none;
+  margin-top: var(--space-3);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-2) var(--space-6);
+}
+
+@media (max-width: 600px) {
+  .budget-list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.budget-list li {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--color-border-subtle);
+  padding-bottom: var(--space-1);
 }
 
 .card-tag {

@@ -54,7 +54,7 @@
 
       <div class="video-grid">
         <div class="bento-card">
-          <video controls preload="auto" poster="assets/thumb.png" data-src="assets/video.mp4" width="800" height="450" playsinline>
+          <video controls preload="auto" poster="assets/thumb.jpg" data-src="assets/video.mp4" width="800" height="450" playsinline>
             <track src="assets/subtitles.vtt" kind="subtitles" srclang="en" label="English" default>
           </video>
           <div class="card-label">
@@ -138,6 +138,42 @@
       <div class="stat-card">
         <div class="stat-number">228,000 VND</div>
         <div class="stat-label">Total Model Cost (Recycled Cardboard &amp; Reused Tools)</div>
+      </div>
+    </div>
+
+    <details class="details-drawer">
+      <summary>Materials &amp; Cost Breakdown (228,000 VND)</summary>
+      <div class="details-body">
+        <ul class="budget-list">
+          <li><span>Watercolor Paint Set</span><strong>110,000 VND</strong></li>
+          <li><span>Cotton &amp; White Paint</span><strong>50,000 VND</strong></li>
+          <li><span>Seismic Pendulum Weight</span><strong>40,000 VND</strong></li>
+          <li><span>Aluminum Foil Paper</span><strong>18,000 VND</strong></li>
+          <li><span>Plastic Straws &amp; Skewers</span><strong>10,000 VND</strong></li>
+          <li><span>Recycled Cardboard, Paper, Glue</span><strong>0 VND (Reused)</strong></li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <section class="stem-section">
+    <h2 class="section-title">STEM Architecture</h2>
+    <div class="stem-grid">
+      <div class="stem-card">
+        <h3 class="stem-card-title">Science</h3>
+        <p>Combines solar, wind, underground hydropower, and geothermal heat for self-sufficient clean energy, paired with rooftop gardens and green parks acting as urban carbon lungs.</p>
+      </div>
+      <div class="stem-card">
+        <h3 class="stem-card-title">Technology</h3>
+        <p>Features an early disaster warning weather radar on the high-rise roof, zero-emission VinFast EVs, hydrogen refueling station, overhead monorail, and aerial flying transit.</p>
+      </div>
+      <div class="stem-card">
+        <h3 class="stem-card-title">Engineering</h3>
+        <p>Integrates a giant Tuned Mass Damper (seismic pendulum) inside the central skyscraper to absorb vibrations and stabilize structures during strong winds or earthquakes.</p>
+      </div>
+      <div class="stem-card">
+        <h3 class="stem-card-title">Mathematics</h3>
+        <p>Optimizes structural proportions, energy source allocation across 4 renewable layers, and keeps total physical construction cost to 228,000 VND by reusing cardboard and tools.</p>
       </div>
     </div>
   </section>
@@ -387,7 +423,23 @@
           fetch(url)
             .then(function(res) {
               if (!res.ok) throw new Error('HTTP ' + res.status);
-              return res.blob();
+              const total = Number(res.headers.get('content-length')) || 0;
+              if (!res.body || !total) return res.blob();
+              const reader = res.body.getReader();
+              const chunks = [];
+              let loaded = 0;
+              function pump() {
+                return reader.read().then(function(result) {
+                  if (result.done) return new Blob(chunks, { type: 'video/mp4' });
+                  chunks.push(result.value);
+                  loaded += result.value.byteLength;
+                  if (wantPlay && tag) {
+                    tag.textContent = 'Loading ' + Math.min(99, Math.round((loaded / total) * 100)) + '%';
+                  }
+                  return pump();
+                });
+              }
+              return pump();
             })
             .then(function(blob) {
               video.removeEventListener('click', onEarlyClick);
