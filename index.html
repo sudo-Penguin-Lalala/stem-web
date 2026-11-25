@@ -366,24 +366,47 @@
       });
     })();
 
-    // Buffer videos as Blob URLs so seeking works reliably without HTTP 206 Range errors
-    (function() {
-      document.querySelectorAll('video[data-src]').forEach(function(video) {
-        const url = video.getAttribute('data-src');
-        if (!url) return;
-        fetch(url)
-          .then(function(res) {
-            if (!res.ok) throw new Error('HTTP ' + res.status);
-            return res.blob();
-          })
-          .then(function(blob) {
-            video.src = URL.createObjectURL(blob);
-          })
-          .catch(function() {
-            video.src = url;
-          });
-      });
-    })();
+    // Buffer videos sequentially after window load so the page never stays stuck loading
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        const videos = Array.from(document.querySelectorAll('video[data-src]'));
+        function loadNext(index) {
+          if (index >= videos.length) return;
+          const video = videos[index];
+          const url = video.getAttribute('data-src');
+          const tag = video.closest('.bento-card')?.querySelector('.card-tag');
+          const origTag = tag ? tag.textContent : '';
+          let wantPlay = false;
+
+          function onEarlyClick() {
+            wantPlay = true;
+            if (tag) tag.textContent = 'Loading...';
+          }
+          video.addEventListener('click', onEarlyClick, { once: true });
+
+          fetch(url)
+            .then(function(res) {
+              if (!res.ok) throw new Error('HTTP ' + res.status);
+              return res.blob();
+            })
+            .then(function(blob) {
+              video.removeEventListener('click', onEarlyClick);
+              video.src = URL.createObjectURL(blob);
+              if (tag && origTag) tag.textContent = origTag;
+              if (wantPlay) video.play().catch(function() {});
+            })
+            .catch(function() {
+              video.removeEventListener('click', onEarlyClick);
+              video.src = url;
+              if (tag && origTag) tag.textContent = origTag;
+            })
+            .finally(function() {
+              loadNext(index + 1);
+            });
+        }
+        loadNext(0);
+      }, 80);
+    });
   </script>
 </body>
 </html>
