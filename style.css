@@ -232,6 +232,12 @@ button:disabled {
   gap: var(--space-3);
 }
 
+.brand-logo-link {
+  display: inline-flex;
+  flex-shrink: 0;
+  border-radius: var(--radius-sm);
+}
+
 .logo {
   width: 64px;
   height: 64px;
