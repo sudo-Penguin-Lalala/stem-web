@@ -54,8 +54,7 @@
 
       <div class="video-grid">
         <div class="bento-card">
-          <video controls preload="auto" poster="assets/thumb.png" width="800" height="450" playsinline>
-            <source src="assets/video.mp4" type="video/mp4">
+          <video controls preload="auto" poster="assets/thumb.png" data-src="assets/video.mp4" width="800" height="450" playsinline>
             <track src="assets/subtitles.vtt" kind="subtitles" srclang="en" label="English" default>
           </video>
           <div class="card-label">
@@ -65,8 +64,7 @@
         </div>
 
         <div class="bento-card">
-          <video controls preload="auto" poster="assets/house.jpg" width="800" height="450" playsinline muted>
-            <source src="assets/model-tour.mp4" type="video/mp4">
+          <video controls preload="auto" poster="assets/house.jpg" data-src="assets/model-tour.mp4" width="800" height="450" playsinline muted>
           </video>
           <div class="card-label">
             <span>Model Overview Clip</span>
@@ -365,6 +363,25 @@
       closeBtn.addEventListener('click', function() { dialog.close(); });
       dialog.addEventListener('click', function(e) {
         if (e.target === dialog) dialog.close();
+      });
+    })();
+
+    // Buffer videos as Blob URLs so seeking works reliably without HTTP 206 Range errors
+    (function() {
+      document.querySelectorAll('video[data-src]').forEach(function(video) {
+        const url = video.getAttribute('data-src');
+        if (!url) return;
+        fetch(url)
+          .then(function(res) {
+            if (!res.ok) throw new Error('HTTP ' + res.status);
+            return res.blob();
+          })
+          .then(function(blob) {
+            video.src = URL.createObjectURL(blob);
+          })
+          .catch(function() {
+            video.src = url;
+          });
       });
     })();
   </script>
